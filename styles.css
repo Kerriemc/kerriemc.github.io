@@ -1,0 +1,680 @@
+/* ===============================
+   GLOBAL STYLES
+   =============================== */
+:root {
+    --primary: #e2291f;
+    --primary-dark: #c01c14;
+    --secondary: #d3dee2;
+    --accent: #af907e;
+    --accent-light: #c5af9f;
+    --dark: #2d2d37;
+    --light: #f8f9fa;
+    --gray: #6c757d;
+}
+
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: 400;
+    color: var(--dark);
+    line-height: 1.7;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    font-optical-sizing: auto;
+}
+
+h1, h2, .client-info h4 {
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
+    font-weight: 500;
+    font-optical-sizing: auto;
+    letter-spacing: 0;
+}
+
+.cta-section h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 600;
+    font-optical-sizing: auto;
+}
+
+.section-title {
+    margin-bottom: 45px;
+    position: relative;
+}
+
+.section-title h2 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 15px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.section-title h2:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 70px;
+    height: 3px;
+    background-color: var(--primary);
+}
+
+.section-title.text-center h2:after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.btn {
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-primary:hover, 
+.btn-primary:focus {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background-color: white;
+    color: var(--primary);
+}
+
+.btn-outline-primary {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+section {
+    padding: 80px 0;
+}
+
+/* ===============================
+   NAVIGATION
+   =============================== */
+.navbar {
+    padding: 15px 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 45px;
+    margin-right: 15px;
+}
+
+.agent-name {
+    font-family: 'Playfair Display', Georgia, sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: 28px;
+    color: var(--primary);
+}
+
+.navbar-nav .nav-link {
+    color: var(--dark);
+    font-weight: 600;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--primary);
+}
+
+/* ===============================
+   HERO SECTION
+   =============================== */
+.hero {
+    height: 100vh;
+    min-height: 600px;
+    background-image: url('images/west-island-crop.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+/* ===============================
+   ABOUT SECTION
+   =============================== */
+.about-section {
+    background-color: var(--light);
+}
+
+.about-img {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-img:before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: -20px;
+    width: 100%;
+    height: 100%;
+    border: 5px solid var(--primary);
+    z-index: -1;
+    border-radius: 10px;
+}
+
+.about-img img {
+    border-radius: 10px;
+}
+
+.about-content p {
+    margin-bottom: 25px;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    margin: 0 10px;
+}
+
+.stat-item h3 {
+    color: var(--primary);
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.broker-info {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.broker-logo {
+    margin-right: 15px;
+}
+
+/* ===============================
+   LISTINGS SECTION
+   =============================== */
+.listings-section {
+    background-color: white;
+}
+
+.property-card {
+    margin-bottom: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.property-card:hover {
+    transform: translateY(-10px);
+}
+
+.property-img {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.property-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.property-card:hover .property-img img {
+    transform: scale(1.1);
+}
+
+.property-status {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: var(--primary);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.property-price {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+.property-info {
+    padding: 20px;
+}
+
+.property-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.property-address {
+    color: var(--gray);
+    margin-bottom: 15px;
+}
+
+.property-features {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    border-top: 1px solid var(--secondary);
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+}
+
+.feature i {
+    color: var(--primary);
+    margin-right: 5px;
+}
+
+/* ===============================
+   SERVICES SECTION
+   =============================== */
+.services-section {
+    background-color: var(--secondary);
+}
+
+.service-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-card i {
+    font-size: 46px;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+}
+
+/* ===============================
+   TESTIMONIALS SECTION
+   =============================== */
+.testimonials-section {
+    background-color: var(--light);
+}
+
+.testimonial-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.testimonial-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    flex: 0 0 100%;
+}
+
+@media (min-width: 768px) {
+    .testimonial-card {
+        flex: 0 0 calc(50% - 30px);
+    }
+}
+
+@media (min-width: 992px) {
+    .testimonial-card {
+        flex: 0 0 calc(33.333% - 30px);
+    }
+}
+
+.testimonial-card p {
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.testimonial-client {
+    display: flex;
+    align-items: center;
+}
+
+.client-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.client-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.client-info h4 {
+    margin-bottom: 5px;
+}
+
+.client-info span {
+    color: var(--gray);
+}
+
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.slider-btn {
+    background-color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.slider-btn:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* ===============================
+   CTA SECTION
+   =============================== */
+.cta-section {
+    background-color: var(--primary);
+    color: white;
+    padding: 60px 0;
+}
+
+.cta-section h2 {
+    margin-bottom: 10px;
+}
+
+/* ===============================
+   CONTACT SECTION
+   =============================== */
+.contact-section {
+    background-color: var(--light);
+}
+
+.contact-info {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.info-item i {
+    font-size: 20px;
+    color: var(--primary);
+    margin-right: 15px;
+    padding-top: 5px;
+}
+
+.info-item h4 {
+    margin-bottom: 5px;
+}
+
+.social-links {
+    display: flex;
+    margin-top: 30px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    color: var(--dark);
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+.contact-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    height: 50px;
+    padding: 10px 20px;
+    border: 1px solid var(--secondary);
+    border-radius: 5px;
+}
+
+textarea.form-control {
+    height: auto;
+}
+
+/* ===============================
+   FOOTER
+   =============================== */
+.footer-section {
+    background-color: #252525;
+    color: white;
+    padding: 80px 0 30px;
+}
+
+.footer-about h3,
+.footer-links h3,
+.footer-newsletter h3 {
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #bdbdbd;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary);
+    padding-left: 5px;
+}
+
+.footer-newsletter form {
+    position: relative;
+    margin-top: 20px;
+}
+
+.footer-newsletter input {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+.footer-newsletter button {
+    position: absolute;
+    right: 0
+}
+
+* Add these styles to your styles.css file */
+
+/* Video background container */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.video-background video {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+/* Ensure the hero section has position relative for proper overlay positioning */
+.hero {
+    position: relative;
+    overflow: hidden;
+    /* Keep your existing hero styles */
+}
+
+/* Make sure the hero-overlay is above the video but below the content */
+.hero-overlay {
+    z-index: 1;
+}
+
+/* Ensure the hero content is above both the video and overlay */
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+#tbologo {
+   width: 120px; 
+   fill:#ffffff; 
+   opacity:0.5;
+   transition: all 0.5s ease;
+}
+
+#tbologo:hover {
+   opacity:1;
+}
